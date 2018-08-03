@@ -1,10 +1,10 @@
 {
   "groups": {
-    "default": {
-      "packages": [
-        "example/package.json",
-        "package.json"
-      ]
+    "uni": {
+      "packages": ["package.json"]
+    },
+    "example": {
+      "packages": ["example/package.json"]
     }
   }
 }
