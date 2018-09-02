@@ -48,7 +48,7 @@
     "react": "^16.4.2",
     "react-test-renderer": "^16.4.2",
     "regenerator-runtime": "^0.12.1",
-    "wait-on": "^2.1.0"
+    "wait-on": "^3.0.0"
   },
   "peerDependencies": {
     "react": "^16.4.2"
