@@ -19,9 +19,9 @@ The goals of uni are very simple:
 uni provides 2 React components:
 
 1. for the server, just pass it some initial data and routes, and render the thing
-2. for the client, just pass it the data your rendered on the serve and the same routes you passed to the server component, and hydrate the thing
+2. for the client, just pass it the data your rendered on the server and the same routes you passed to the server component, and hydrate the thing
 
-It also provides a single data-fetching API. This data-fetching API is defined next to your your routes.
+It also provides a single data-fetching API. This data-fetching API is defined next to your routes.
 
 **Flexibility**
 
@@ -29,7 +29,7 @@ uni doesn't do much.
 
 It gives you a couple of React components for rendering your routes, and doesn't force you to render or hydrate your app in any particular way. You can render however you want!
 
-It gives you a single data-fetching API, which is defined on your routes. This means you can build your app components in anyway you want, and your React components are just React components.
+It gives you a single data-fetching API, which is defined on your routes. This means you can build your app components in any way you want, and your React components are just React components.
 
 ## Getting Started
 
@@ -82,7 +82,7 @@ export default Home;
 
 #### Data Fetching
 
-uni provides a very familiar `getInitialData` for data fetching, which is defined in the route configuration.
+uni provides a very familiar `getInitialData` for data fetching (influenced by `getInitialProps` in [next.js](https://github.com/zeit/next.js), which is defined in the route configuration.
 
 This provides a clear seperation of concerns and agnosticism between route configuration/data fetching and components. Your React components are just React components, and you can swap components on routes as much as you please.
 
@@ -219,7 +219,7 @@ A React component that renders a route with some initial data. Takes the followi
 
 To hydrate your React application on a client, uni provides a React component. You must then call `react-dom`'s `hydrate` method
 
-The client-side application needs access to the data that was used to render the application on the server, and so should be injected into the HTML document that the server wrapped the rendered React application in and sent to the client. This data could be inside a `script` tag, that injects the data onto the global `window` object, like so:
+The client-side application needs access to the data that was used to render the application on the server. So this data should be injected into the HTML document that the server wrapped the rendered React application in and sent to the client. This data could be inside a `script` tag, that injects the data onto the global `window` object, like so:
 
 ```JavaScript
 <script>
