@@ -4,7 +4,10 @@ const loadInitialData = async (url, routes) => {
   const matchedRoutes = matchRoutes(routes, url);
 
   if (matchedRoutes.length <= 0) {
-    throw new Error(`No route was found for ${url}.`);
+    throw new Error(
+      `No route was found for '${url}' given the regex 
+      '/${routes[0]['path']}/'`,
+    );
   }
 
   const { route, match } = matchedRoutes[0];
